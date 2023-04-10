@@ -155,7 +155,19 @@ export default function App() {
 
 	useEffect(() => {
 		getData();
-		console.log(add);
+		// console.log(add);
+		setNotiType('edit');
+		setNotification(<div style={{textAlign: 'center'}}>
+			<h2>Welcome to my todo list app! </h2> <br/>
+			<h3>
+				What can you do here? <br/><br/>
+				*** Add new item ***<br/>
+				*** Modify already had one (Detail button) ***<br/>
+				*** Delete if you don't need it ***<br/>
+				*** And once you'd done, remember to check from the list *** <br/>
+			</h3>
+			<p>Have fun!!</p>
+		</div>)
 	}, []);
 
 	useEffect(() => {
@@ -170,7 +182,7 @@ export default function App() {
 		<div className="app">
 			<section className="greeting">
 				<h1 className="title">
-					Hey,{' '}
+					Hey, 
 					<input
 						type="text"
 						placeholder="(input your name here)"
