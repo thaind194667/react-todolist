@@ -10,7 +10,7 @@ export default function EditForm({todo, edit, cancel}) {
 	
 	const [category, setCategory] = useState(todo.category)
 	const [title, setTitle] = useState(todo.title)
-	const [content, setContent] = useState('')
+	const [content, setContent] = useState(todo.content)
 	const createdAt = todo.createdAt
 	const finishedAt = todo.finishedAt
 	
@@ -35,7 +35,7 @@ export default function EditForm({todo, edit, cancel}) {
 
 			<textarea name="title" className="title" placeholder="Title?" value={title} onChange={(e) => setTitle(e.target.value)}/>
 			<div className="main-content">
-				<textarea name="content" className="content" placeholder="Doing something?" v-value={content} onChange={(e) => setContent(e.target.value)}/>
+				<textarea name="content" className="content" placeholder="Doing something?" value={content} onChange={(e) => setContent(e.target.value)}/>
 				<div className="options category">
 					{
 						categories.map( (value, index) => {
