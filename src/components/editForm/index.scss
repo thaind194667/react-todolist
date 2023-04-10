@@ -1,0 +1,95 @@
+
+@use '../../base';
+
+.edit-form {
+	@include base.flexbox;
+	@include base.fullpage();
+	font-size: 3rem;
+	border: solid 0.8rem lime;
+	border-radius: 1rem;
+	overflow: visible;
+	word-break:keep-all;
+
+	textarea {
+		resize: vertical;
+		padding: 0;
+	}
+
+	.title {
+		text-align: center; 
+		font-size: 5rem; 
+		font-weight: bolder;
+		width: 100%;
+		background-color: rgba(216, 212, 177, 0.8);
+	}
+
+	.main-content {
+		width: 100%;
+		background-color: rgba(176, 236, 234, 0.8);
+		.content {
+			text-align: center; 
+			font-size: 2.5rem; 
+			vertical-align: center;
+			min-height: 50vh;
+			width: 100%;
+		}
+		.date {
+			width: 100%; 
+			text-align: center; 
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	button {
+		display: inline-block;
+		min-width: 7vw;
+		padding: 0.5rem;
+		border-radius: 0.25rem;
+		color: #FFF;
+		font-size: 1.6rem;
+		transition: 0.2s ease-in-out;
+		margin: 0.5rem;
+
+		&:hover {
+			opacity: 0.7;
+			cursor: pointer;
+		}
+
+		
+	}
+
+	.action {
+		text-align: center; 
+		display: inline-block;
+		background-color: rgba(216, 212, 177, 0.8);
+		width: 100%;
+		.edit {
+			margin-right: 0.5rem;
+			background-color:#ea40a9;
+
+			&:disabled {
+				background-color: gray;
+				opacity: 1;
+				cursor: default;
+			}
+		}
+		.delete {
+			background-color: var(--danger);
+		}
+	}
+
+	.errorNoti {
+		background-color: rgba(rgb(254, 82, 82), 0.9);
+		font-size: 1.5rem;
+		position: absolute;
+		left:0;
+		bottom: 0;
+		height: 8.5vh;
+		width: 50%;
+		z-index: 2;
+		text-align: center;
+		@include base.flexbox;
+	}
+
+}
